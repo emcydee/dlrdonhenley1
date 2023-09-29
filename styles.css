@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+    transition: width 2s, height 4s;
+  
+}
+
+h1 {
+  text-align: center;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumbnail {
+  margin: 10px;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 40px; /* Make the thumbnails rounded squares */
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.2s ease, filter 0.3s ease; /* Added filter for grayscale transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.thumbnail img {
+  width: 100px;
+  height: 100px;
+  filter: grayscale(90%); /* Apply grayscale effect to thumbnails by default */
+}
+
+.thumbnail:hover {
+  border-color: #ff9900;
+  transform: scale(1.1); /* Added scale transform on hover */
+}
+
+/* Add styles for the video container and position the text on the right side */
+.image-info .video-container {
+  position: relative;
+  float: left;
+  width: 50%;
+  margin-right: 10px;
+}
+
+.image-info .video-container video {
+  width: 100%;
+}
+
+.image-info {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.image-info .info {
+  position: relative;
+  text-align: justify;
+  width: 100%;
+  font-size: 15px;
+}
+
+/* Remove grayscale effect on hover and active state */
+.thumbnail:hover img,
+.thumbnail.active img {
+  filter: grayscale(0%);
+}

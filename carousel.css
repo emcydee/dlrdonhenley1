@@ -1,0 +1,102 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+	position: relative;
+	border-radius: 40px;
+    font-family: Tahoma, Arial;
+    padding: 0;
+    margin: 0;
+}
+
+/* Slider Container */
+.slider-container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+	background: #ffffff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+}
+
+/* Slides */
+.slider-container .slides {
+    display: none; /* Initially hide all slides */
+}
+
+/* Show the first slide initially */
+.slider-container .slides:first-child {
+    display: block;
+}
+.slider-container .slider-bullets {
+    text-align: center;
+}
+/* Slider Bullets (Dots) */
+.slider-container .slider-bullets .dots {
+    display: inline-block;
+    padding: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #808080; /* Set the default color for dots */
+    border-radius: 50%;
+}
+
+/* Set the color for the initially active dot */
+.slider-container .slider-bullets .dots:first-child {
+    background-color: #383838;
+}
+
+/* Fade Animation */
+.slider-container .fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Numbers */
+.slider-container .slides .slider-numbers {
+    position: absolute;
+    padding: 15px;
+    font-size: 15px;
+    color: #FFF;
+}
+
+/* Previous and Next Buttons */
+.slider-container .prev,
+.slider-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFF;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+    text-decoration: none;
+	
+}
+
+.slider-container .next {
+    right: 0px;
+}
+
+/* Hover styles for Previous and Next Buttons */
+.slider-container .prev:hover,
+.slider-container .next:hover {
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    border-radius: 3px;
+	
+}
+
+/* Slider Bullets Hover and Active Styles */
+.slider-container .slider-bullets .dots:hover,
+.slider-container .slider-bullets .active {
+    background-color: #383838;
+    cursor: pointer;
+}
